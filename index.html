@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christ University</title>
+    <script src="operations.js"></script>
+</head>
+<body>
+    <h1>Student Information</h1>
+    <form action="/add" method="POST">
+        <input type="text" id="sid" name="sid" placeholder="Register Number"/><br><br>
+        <input type="text" id="sname" name="sname" placeholder="Name"/><br><br>
+        <input type="number" id="sage" name="sage" placeholder="Age"/><br><br>
+        <input type="text" id="sgender" name="sgender" placeholder="Gender"/><br><br>
+        <input type="text" id="scourse" name="scourse" placeholder="Course"/><br><br>
+        <input type="text" id="saddress" name="saddress" placeholder="Address"/><br><br>
+        <input type="text" id="sgrade" name="sgrade" placeholder="Grade"/><br><br>
+        <br><br><input type="submit" name="Submit"/>
+    </form>
+
+    <h1>Search Student Based on Register Number</h1>
+    <form action="/cdisplay" method="POST">
+        <input type="text" id="suid" name="suid" placeholder="Register Number"/><br><br>
+        <br><br><input type="submit" name="Submit"/>
+    </form>
+
+    <h1>Students Information Using Course</h1>
+    <form action="/cmdisplay" method="POST">
+        <input type="text" id="scourse" name="scourse" placeholder="Register Number"/><br><br>
+        <br><br><input type="submit" name=""/>
+        <p value={name} >{%name%}</p>
+    </form>
+
+    <h1> Male Students Information </h1>
+    <form action="/msdisplay" method="POST">
+          <input type="submit" placeholder="Male Students"/>
+    </form>
+
+    <h1> Update Students Information </h1>
+    <form action="/update" method="POST">
+        <input type="text" id="sudid" name="sudid" placeholder="Register Number"/><br><br>
+        <br><br>
+        <input type="text" id="sudcourse" name="sudcourse" placeholder="Course"/><br><br>
+        <br><br>
+          <input type="submit"  placeholder="Male Students"/>
+    </form>
+    <script>
+      function display()
+      {
+        var b = "";
+        const api_url = "http://localhost:7000/display";
+        data = this.getapi(api_url).then((data) => {
+            // console.log("y");
+            for (var i = 0; i <= data.length; i++) {
+             
+              console.log(data[i]); 
+            
+            }
+            // console.log("a")
+          });    
+      }
+
+    </script>
+</body>
+</html>
